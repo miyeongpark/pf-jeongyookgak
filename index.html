@@ -24,20 +24,24 @@
                 slidesToShow: 1,
                 slidesToScroll: 1, //슬라이드 넘어가는 갯수
                 autoplay: false, //작업시 애니메이션 멈출 시 false로 하면 편함
-                autoplaySpeed: 2000, //다음 동작까지 걸리는 시간
+                autoplaySpeed: 500, //다음 동작까지 걸리는 시간
                 dots: true,
                 infinite: true, //반복여부
-                speed: 1500, //애니메이션 이동 속도
+                speed: 800, //애니메이션 이동 속도
                 cssEase: 'ease-out', //애니메이션 전환 유형
                 arrows: true,
                 fade: false, //흐려졌다가 나타남
                 //페이지 번호 추가
-                customPaging: function(slider, i) {// i는 슬라이드의 인덱스입니다 (0부터 시작)
-                    return '<span>' + (i + 1) + '</span><span>/</span><span>' + slider.slideCount + '</span>'; // 슬라이드 번호를 표시 (예: 1/5, 2/5, ...)
-                }
+                // customPaging: function(slider, i) {// i는 슬라이드의 인덱스입니다 (0부터 시작)
+                //     return '<span>' + (i + 1) + '</span><span>/</span><span>' + slider.slideCount + '</span>'; // 슬라이드 번호를 표시 (예: 1/5, 2/5, ...)
+                // } 
             });
-            // next, pause 위치 이동
+            // 버튼 위치 이동
             $(".slick-prev, .slick-next").wrapAll("<div class='wbutton'></div>");
+        });
+        $(this).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+            var index = (currentSlide ? currentSlide : slick.currentSlide) + 1;
+        $('.slick-dots').html('<span>' + index + '/' + (slick.slideCount)+'</span>');//dots 가 나올자리에 <span>으로 원하는 페이지 문자열 삽입
         });
     </script>
     
@@ -45,25 +49,28 @@
 <body>
     <!-- header영역 -->
     <header id="header">
-        <div class="wrap">
-            <nav class="flex">
-                <h1><a href="#">정육각</a></h1>
-                <ul class="gnb flex">
-                    <li><a class="h6" href="">쇼핑하기</a></li>
-                    <li><a class="h6" href="">배송안내</a></li>
-                    <li><a class="h6" href="">이벤트</a></li>
-                    <li><a class="h6" href="">선물하기</a></li>
-                </ul>
-                <ul class="enb flex">
-                    <li><a class="f14" href="">공지사항</a></li>
-                    <li><a class="f14" href="">고객센터</a></li>
-                    <li><a class="f14" href="">로그인</a></li>
-                    <li><a class="f14" href="">회원가입</a></li>
-                    <li><a class="f14" href="">장바구니</a></li>
-                    <li><a class="f14" href="">메뉴바</a></li>
-                </ul>
-            </nav>
+        <div class="innerBox">
+            <div class="wrap">
+                <nav class="flex">
+                    <h1><a href="#">정육각</a></h1>
+                    <ul class="gnb flex">
+                        <li><a class="h6" href="">쇼핑하기</a></li>
+                        <li><a class="h6" href="">배송안내</a></li>
+                        <li><a class="h6" href="">이벤트</a></li>
+                        <li><a class="h6" href="">선물하기</a></li>
+                    </ul>
+                    <ul class="enb flex">
+                        <li><a class="f14" href="">공지사항</a></li>
+                        <li><a class="f14" href="">고객센터</a></li>
+                        <li><a class="f14" href="">로그인</a></li>
+                        <li><a class="f14" href="">회원가입</a></li>
+                        <li><a class="f14" href="">장바구니</a></li>
+                        <li><a class="f14" href="">메뉴바</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
+    </header>
         <!-- title영역 -->
         <div class="title">
             <div class="wrap flex">
@@ -73,23 +80,21 @@
                 <p><a href="">가입하고 혜택받기</a></p>
             </div>
         </div>
-    </header>
     <main id="contents">
     <!-- main-section1 홍보 영역 -->
     <section id="s1">
         <div class="wrap flex">
             <h2 class="hide">이벤트 안내</h2>
             <ul class="Ani">
-                <li class="Ani-1"><a class="h5" href="">수입과일 신제품<br>애플망고·체리·레몬·그린키위 출시</a></li>
+                <li class="Ani-1"><a class="h5" href=""><p>복날 기념 최대 1만원 할인</p><br><p>초신선 민물장어 양념구이 출시</p></a></li>
                 <li class="Ani-2"><a class="h5" href="">함께 구매하기 좋은<br>곁들임 최대 30% 할인</a></li>
-                <li class="Ani-3"><a class="h5" href="">갓 잡은 닭과 전복으로<br>만드는 초신선 전복삼계탕</a></li>
-                <li class="Ani-4"><a class="h5" href=""><p>정육각 친구 초대 이벤트</p>
+                <li class="Ani-3"><a class="h5" href="">수입과일 신제품<br>애플망고·체리·레몬·그린키위 출시</a></li>
+                <li class="Ani-4"><a class="h5" href="">갓 잡은 닭과 전복으로<br>만드는 초신선 전복삼계탕</a></li>
+                <li class="Ani-5"><a class="h5" href=""><p>정육각 친구 초대 이벤트</p>
                     <p>친구를 초대하고 5천원 적립금 받으세요!</p></a></li>
-                <li class="Ani-5"><a class="h5" href="">초신선하게 전하는 마음<br>정육각 선물하기 오픈</a></li>
-                <li class="Ani-6"><a class="h5" href="">정육각 앱 설치 하면<br>12% 할인 쿠폰 증정!</a></li>
+                <li class="Ani-6"><a class="h5" href="">초신선하게 전하는 마음<br>정육각 선물하기 오픈</a></li>
+                <li class="Ani-7"><a class="h5" href="">정육각 앱 설치 하면<br>12% 할인 쿠폰 증정!</a></li>  
             </ul>
-                <!-- 버튼, 페이지 번호 -->
-                
             <ul class="event">
                 <li>
                     <p class="h5">정육각 앱 설치하면<br>
@@ -107,7 +112,7 @@
             <ul class="grid">
                 <li>
                     <a href="">
-                        <img src="img/pork.png" alt="">
+                        <img src="img/pork.png" alt="삼겹살 구이용">
                         <h3 class="h6">초신선 돼지 삼겹살 구이용</h3>
                         <p>기준가 21,600원</p>
                     </a>
@@ -115,7 +120,7 @@
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/chicken.png" alt="">
+                        <img src="img/chicken.png" alt="닭볶음탕">
                         <h3 class="h6">초신선 닭볶음탕</h3>
                         <p>기준가 7,800원</p>
                     </a>
@@ -123,7 +128,7 @@
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/porkcutlet.png" alt="">
+                        <img src="img/porkcutlet.png" alt="돈까스">
                         <h3 class="h6">초신선 등심 돈까스</h3>
                         <p>기준가 13,500원</p>
                     </a>
@@ -131,7 +136,7 @@
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/egg.png" alt="">
+                        <img src="img/egg.png" alt="유정란">
                         <h3 class="h6">초신선 동물복지 무항생제 유정란</h3>
                         <p>기준가 6,900원</p>
                     </a>
@@ -139,7 +144,7 @@
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/milk.png" alt="">
+                        <img src="img/milk.png" alt="우유">
                         <h3 class="h6">초신선 무항생제 우유</h3>
                         <p>기준가 4,300원</p>
                     </a>
@@ -147,7 +152,7 @@
                 </li>
                 <li>
                     <a href="">
-                        <img src="img/bmix.png" alt="">
+                        <img src="img/bmix.png" alt="한우다짐육">
                         <h3 class="h6">초신선 무항생제 이유식용 한우 우둔 다짐육</h3>
                         <p>기준가 17,100원</p>
                     </a>
@@ -177,9 +182,9 @@
             </ul>
             <div class="wrap address">
                 <h2>로고</h2>
-                <address>(주)정육각대표이사: 김재연|주소: 경기도 김포시 고촌읍 아라육로57번길 126<br>
-                    사업자등록번호 : 224-87-00271<span>[조회]</span>|통신판매업신고번호: 2021-경기김포-0668
-                    <p>개인정보관리책임자: 박준태(privacy@yookgak.com)</p>
+                <address>(주)정육각 대표이사:김재연 | 주소:경기도 김포시 고촌읍 아라육로57번길 126<br>
+                    사업자등록번호 :224-87-00271<span>[조회]</span> | 통신판매업신고번호:2021-경기김포-0668
+                    <p>개인정보관리책임자:박준태(privacy@yookgak.com)</p>
                 </address>
                 <p>© 2021 Jeongyookgak Inc. All rights reserved.</p>
             </div>
