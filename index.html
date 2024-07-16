@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon16.png" type="image/x-icon">
+    <title>정육각- 언제나 초신선</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 폰트 추가 -->
+    <link href='font/SpoqaHanSansNeo_all/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+    <!-- 자바 추가 -->
+    <script type="text/javascript" src="../js/jquery-3.7.1.js"></script>
+    <script type="text/javascript"></script>
+    <!-- 슬릭 추가 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.Ani').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1, //슬라이드 넘어가는 갯수
+                autoplay: false, //작업시 애니메이션 멈출 시 false로 하면 편함
+                autoplaySpeed: 2000, //다음 동작까지 걸리는 시간
+                dots: true,
+                infinite: true, //반복여부
+                speed: 1500, //애니메이션 이동 속도
+                cssEase: 'ease-out', //애니메이션 전환 유형
+                arrows: true,
+                fade: false, //흐려졌다가 나타남
+                //페이지 번호 추가
+                customPaging: function(slider, i) {// i는 슬라이드의 인덱스입니다 (0부터 시작)
+                    return '<span>' + (i + 1) + '</span><span>/</span><span>' + slider.slideCount + '</span>'; // 슬라이드 번호를 표시 (예: 1/5, 2/5, ...)
+                }
+            });
+            // next, pause 위치 이동
+            $(".slick-prev, .slick-next").wrapAll("<div class='wbutton'></div>");
+        });
+    </script>
+    
+</head>
+<body>
+    <!-- header영역 -->
+    <header id="header">
+        <div class="wrap">
+            <nav class="flex">
+                <h1><a href="#">정육각</a></h1>
+                <ul class="gnb flex">
+                    <li><a class="h6" href="">쇼핑하기</a></li>
+                    <li><a class="h6" href="">배송안내</a></li>
+                    <li><a class="h6" href="">이벤트</a></li>
+                    <li><a class="h6" href="">선물하기</a></li>
+                </ul>
+                <ul class="enb flex">
+                    <li><a class="f14" href="">공지사항</a></li>
+                    <li><a class="f14" href="">고객센터</a></li>
+                    <li><a class="f14" href="">로그인</a></li>
+                    <li><a class="f14" href="">회원가입</a></li>
+                    <li><a class="f14" href="">장바구니</a></li>
+                    <li><a class="f14" href="">메뉴바</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- title영역 -->
+        <div class="title">
+            <div class="wrap flex">
+                <h2 class="hide">타이틀배너</h2>
+                <p class="h6">정육각이 처음이라면?</p>
+                <p class="h1">가입 즉시 누구나<br>한달 동안<span> 무료배송!</span></p>
+                <p><a href="">가입하고 혜택받기</a></p>
+            </div>
+        </div>
+    </header>
+    <main id="contents">
+    <!-- main-section1 홍보 영역 -->
+    <section id="s1">
+        <div class="wrap flex">
+            <h2 class="hide">이벤트 안내</h2>
+            <ul class="Ani">
+                <li class="Ani-1"><a class="h5" href="">수입과일 신제품<br>애플망고·체리·레몬·그린키위 출시</a></li>
+                <li class="Ani-2"><a class="h5" href="">함께 구매하기 좋은<br>곁들임 최대 30% 할인</a></li>
+                <li class="Ani-3"><a class="h5" href="">갓 잡은 닭과 전복으로<br>만드는 초신선 전복삼계탕</a></li>
+                <li class="Ani-4"><a class="h5" href=""><p>정육각 친구 초대 이벤트</p>
+                    <p>친구를 초대하고 5천원 적립금 받으세요!</p></a></li>
+                <li class="Ani-5"><a class="h5" href="">초신선하게 전하는 마음<br>정육각 선물하기 오픈</a></li>
+                <li class="Ani-6"><a class="h5" href="">정육각 앱 설치 하면<br>12% 할인 쿠폰 증정!</a></li>
+            </ul>
+                <!-- 버튼, 페이지 번호 -->
+                
+            <ul class="event">
+                <li>
+                    <p class="h5">정육각 앱 설치하면<br>
+                       12% 할인 쿠폰 증정!
+                    </p>
+                    <p><a href="">자세히 보기</a></p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- main-section2 상품 영역 -->
+    <section id="s2">
+        <div class="wrap grid">
+            <h2 class="h4">정육각 베스트 상품</h2>
+            <ul class="grid">
+                <li>
+                    <a href="">
+                        <img src="img/pork.png" alt="">
+                        <h3 class="h6">초신선 돼지 삼겹살 구이용</h3>
+                        <p>기준가 21,600원</p>
+                    </a>
+                    <button>장바구니</button>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/chicken.png" alt="">
+                        <h3 class="h6">초신선 닭볶음탕</h3>
+                        <p>기준가 7,800원</p>
+                    </a>
+                    <button><a href="">장바구니</a></button>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/porkcutlet.png" alt="">
+                        <h3 class="h6">초신선 등심 돈까스</h3>
+                        <p>기준가 13,500원</p>
+                    </a>
+                    <button><a href="">장바구니</a></button>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/egg.png" alt="">
+                        <h3 class="h6">초신선 동물복지 무항생제 유정란</h3>
+                        <p>기준가 6,900원</p>
+                    </a>
+                    <button><a href="">장바구니</a></button>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/milk.png" alt="">
+                        <h3 class="h6">초신선 무항생제 우유</h3>
+                        <p>기준가 4,300원</p>
+                    </a>
+                    <button><a href="">장바구니</a></button>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/bmix.png" alt="">
+                        <h3 class="h6">초신선 무항생제 이유식용 한우 우둔 다짐육</h3>
+                        <p>기준가 17,100원</p>
+                    </a>
+                    <button><a href="">장바구니</a></button>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- main-section3 배너 영역 -->
+    <section id="s3">
+        <div class="wrap">
+            <h2 class="h4">다양한 정육각 상품을 만나보세요!</h2>
+            <p><a class="f14" href="">쇼핑하러 가기</a></p>
+        </div>
+    </section>
+    </main>
+    <footer id="footer">
+        <div class="wrap">
+            <ul class="info">
+                <li><a class="f14" href="">인재채용</a></li>
+                <li><a class="f14" href="">이용약관</a></li>
+                <li><a class="f14" href="">개인정보처리방침</a></li>
+            </ul>
+            <ul class="sns">
+                <li><button>정육각 앱 설치</button></li>
+                <li><a class="f14" href="">인스타그램</a></li>
+            </ul>
+            <div class="wrap address">
+                <h2>로고</h2>
+                <address>(주)정육각대표이사: 김재연|주소: 경기도 김포시 고촌읍 아라육로57번길 126<br>
+                    사업자등록번호 : 224-87-00271<span>[조회]</span>|통신판매업신고번호: 2021-경기김포-0668
+                    <p>개인정보관리책임자: 박준태(privacy@yookgak.com)</p>
+                </address>
+                <p>© 2021 Jeongyookgak Inc. All rights reserved.</p>
+            </div>
+            <div class="wrap tel">
+                <h2 class="f14">고객센터</h2>
+                <h3 class="h5">1800-0658</h3>
+                <p>월-토요일 : 08:30 - 17:30<br>
+                    점심 : 12:15 - 13:15<br>
+                    (일요일 및 공휴일 휴무)</p>
+                <p>이메일: <span>help@yookgak.com</span></p>
+                <button>자주묻는질문</button>
+                <button>1:1문의</button>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
