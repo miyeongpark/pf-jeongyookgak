@@ -5,13 +5,22 @@ body {
 }
 /* header 영역 */
 #header {   
-  width: 100%;
-  background-color: #000;
+  
 }
-  #header>div.wrap {
+  #header .innerBox{
+  max-width: 100%;
+  background-color: #000;
+  height: 96px;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 100;
+  }
+  #header div.wrap {
   
   }
-  #header div.wrap nav {  
+  #header div.wrap nav {
   width: 100%;
   height: 100px;
   align-items: center;
@@ -99,47 +108,50 @@ body {
   border-right: 1px solid;
   position: center;
   }
-  #header div.title{
+/* 타이틀 영역 */
+  div.title{
   background-image: url(../img/title_bg.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-color: #1d1d1d;
   }
-  #header div.title>div{
+  div.title>div{
   height: 560px;
   flex-direction: column;
   justify-content: center;
   padding: 0 30px;
   box-sizing: border-box;
   }
-  #header div.title>div.wrap p{
+  div.title>div.wrap p{
   line-height: 1.5;
   color: #fff;
+  word-spacing: -5px;
   }
-  #header div.title>div.wrap p:last-child{
+  div.title>div.wrap p:last-child{
   width: 200px;
   border-radius: 5px;
   box-sizing: border-box;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: #f16f26;
-  height: 68px;
+  height: 50px;
+  word-spacing: 0;
   }
-  #header div.title > div.wrap p span{
+  div.title > div.wrap p span{
   font-weight: 700;
   color: #97dbf4;
   }
-  #header div.title > div.wrap p a{
+  div.title > div.wrap p a{
   color: #fff;
   display: block;
   text-align: center;
   font-weight: 600;
-  height: 68px;
-  line-height: 68px;
+  height: 50px;
+  line-height: 50px;
   box-sizing: border-box;
   transition: 0.01s;
   }
-  #header div.title > div.wrap p a:hover{
+  div.title > div.wrap p a:hover{
   border-radius: 5px;
   background-color: #000;
   box-shadow: 1px 1px 30px 5px #fff;
@@ -180,21 +192,24 @@ main#contents .wbutton{
   column-gap: 10px;
 }
 main#contents .wbutton .slick-prev{
-  left: 20px;
+  left: 10px;
 }
 main#contents .wbutton .slick-prev::before{
-  background-color: tomato;
+  content: '';
+  display: inline-block;
+  width: 16px; height: 16px;
+  background: url(../img/pre.svg)no-repeat center/contain;
   left: 20px;
 }
 main#contents .wbutton .slick-next{
-  right: 20px;
+  right: 10px;
 }
 main#contents .wbutton .slick-next::before{
-  background-color: tomato;
+  content: '';
+  display: inline-block;
+  width: 16px; height: 16px;
+  background: url(../img/next.svg)no-repeat center/contain;
   left: 20px;
-}
-.slick-active{
-  font-size: 32px;
 }
 main#contents section#s1 div.wrap ul.Ani li {
   height: 100%;
@@ -205,22 +220,37 @@ main#contents section#s1 div.wrap ul.Ani li a {
   justify-content: space-between;
   align-items: center;
 }
-main#contents section#s1 div.wrap ul.Ani li.Ani-4{
-
+main#contents section#s1 div.wrap ul.Ani li.Ani-1 a{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto auto 1fr;
+  gap: 5px;
+}
+main#contents section#s1 div.wrap ul.Ani li.Ani-1 p:first-child{
+  grid-column: 1;
+  grid-row: 2;
+}
+main#contents section#s1 div.wrap ul.Ani li.Ani-1 p:last-child{
+  grid-column: 1;
+  grid-row: 3;
+  color: #c34016;
 }
 main#contents section#s1 div.wrap ul.Ani li.Ani-4 a{
+  font-size: 23px;
+}
+main#contents section#s1 div.wrap ul.Ani li.Ani-5 a{
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr auto auto 1fr;
   gap: 10px;
 }
-main#contents section#s1 div.wrap ul.Ani li.Ani-4 p:first-child{
+main#contents section#s1 div.wrap ul.Ani li.Ani-5 p:first-child{
   grid-column: 1;
   grid-row: 2;
 }
-main#contents section#s1 div.wrap ul.Ani li.Ani-4 p:nth-child(2){
+main#contents section#s1 div.wrap ul.Ani li.Ani-5 p:nth-child(2){
   font-size: 14px;
-  color: #ccc;
+  color: #888;
   grid-column: 1;
   grid-row: 3;
 }
@@ -235,6 +265,11 @@ main#contents section#s1 div.wrap ul.Ani li a::after{
 }
 main#contents section#s1 div.wrap ul.Ani li.Ani-1 a::after{
   background-image: url(../img/s1_1.png);
+  grid-column: 2;
+  grid-row: 1 /span 4;
+  justify-self: right;
+  margin-right: 50px;
+  background-size: 121%;
 }
 main#contents section#s1 div.wrap ul.Ani li.Ani-2 a::after{
   background-image: url(../img/s1_2.png);
@@ -244,22 +279,29 @@ main#contents section#s1 div.wrap ul.Ani li.Ani-3 a::after{
 }
 main#contents section#s1 div.wrap ul.Ani li.Ani-4 a::after{
   background-image: url(../img/s1_4.png);
+  background-size: 65%;
+}
+main#contents section#s1 div.wrap ul.Ani li.Ani-5 a::after{
+  background-image: url(../img/s1_5.png);
   grid-column: 2;
   grid-row: 1 /span 4;
   justify-self: right;
   margin-right: 30px;
-}
-main#contents section#s1 div.wrap ul.Ani li.Ani-5 a::after{
-  background-image: url(../img/s1_5.png);
+  background-size: 100%;
 }
 main#contents section#s1 div.wrap ul.Ani li.Ani-6 a::after{
   background-image: url(../img/s1_6.png);
-  background-size: 80%;
+  background-size: 56%;
+}
+main#contents section#s1 div.wrap ul.Ani li.Ani-7 a::after{
+  background-image: url(../img/s1_7.png);
+  background-size: 70%;
 }
 /* 슬라이드 버튼, 페이지 번호 */
 main#contents .slick-dots{
   width: fit-content;
-  left: 0;
+  left: 55px;
+  bottom: -20px;
 }
 .slick-dots li{
   display: none;
@@ -344,11 +386,11 @@ section#s2 div.wrap {
 section#s2 div.wrap h2 {
   font-weight: 700;
   margin-bottom: 20px;
-  margin-top: 50px;
+  margin-top: 80px;
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 section#s2 div.wrap ul { 
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr auto;
   grid-template-rows: 1fr 1fr;
 }
 section#s2 div.wrap ul li {
@@ -359,7 +401,7 @@ section#s2 div.wrap ul li {
 }
 section#s2 div.wrap ul li a img {
   width: 370px;
-  height: 300px;
+  height: 339px;
   background-color: #f9f7f8;
   padding: 40px 70px;
   box-sizing: border-box;
@@ -378,8 +420,8 @@ section#s2 div.wrap ul li button{
   width: 68px;
   height: 68px;
   position: absolute;
-  right: 12%;
-  bottom: 30%;
+  right: 70px;
+  bottom: 18%;
   z-index: 1;
   border: 1px solid #fff;
   border-radius: 50%;
@@ -391,6 +433,10 @@ section#s2 div.wrap ul li button{
   box-shadow: 6px 5px 10px #ccc;
   transition: 0.2;
   font-size: 0;
+}
+section#s2 div.wrap ul li:nth-child(3) button,
+section#s2 div.wrap ul li:nth-child(6) button{
+ right: 30px;
 }
 section#s2 div.wrap ul li button:hover{
   background-color: #000;
