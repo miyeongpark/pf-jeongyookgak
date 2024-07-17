@@ -11,7 +11,7 @@
     <!-- 폰트 추가 -->
     <link href='font/SpoqaHanSansNeo_all/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
     <!-- 자바 추가 -->
-    <script type="text/javascript" src="js/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.7.1.js"></script>
     <script type="text/javascript"></script>
     <!-- 슬릭 추가 -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -39,17 +39,42 @@
             // 버튼 위치 이동
             $(".slick-prev, .slick-next").wrapAll("<div class='wbutton'></div>");
         });
-        $(this).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
-            var index = (currentSlide ? currentSlide : slick.currentSlide) + 1;
-        $('.slick-dots').html('<span>' + index + '/' + (slick.slideCount)+'</span>');//dots 가 나올자리에 <span>으로 원하는 페이지 문자열 삽입
+            $(this).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+                var index = (currentSlide ? currentSlide : slick.currentSlide) + 1;
+            $('.slick-dots').html('<span>' + index + '/' + (slick.slideCount)+'</span>');//dots 가 나올자리에 <span>으로 원하는 페이지 문자열 삽입
+            });
+            $(function() {
+                var lnb = $("#menu").offset().top;
+                $(window).scroll(function() {
+                    var window = $(this).scrollTop();
+                    if(lnb <= window) {
+                    $("#menu").addClass("fixed");
+                    }else{
+                    $("#menu").removeClass("fixed");
+                    }
+                })
+            $("#top-bn").click(function(){ // 버튼을 클릭했을 때
+            $(this).slideUp(500);
+                return false;
+            });
         });
+                        
     </script>
-    
 </head>
 <body>
+    <!-- notice -->
+    <div class="notice" id="top-bn">
+        <h2 class="hide">이벤트 공지사항</h2>
+        <div class="inner">
+            <a href="">
+                <p class="h6">정육각이 처음이라면 <span>한달 동안 무료배송</span></p>
+                <p>닫기</p><img src="img/x.svg" alt="닫기">
+            </a>
+        </div>
+    </div>
     <!-- header영역 -->
     <header id="header">
-        <div class="innerBox">
+        <div class="innerBox" id="menu">
             <div class="wrap">
                 <nav class="flex">
                     <h1><a href="#">정육각</a></h1>
