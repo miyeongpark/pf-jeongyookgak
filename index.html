@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- 폰트 추가 -->
     <link href='font/SpoqaHanSansNeo_all/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
     <!-- 자바 추가 -->
@@ -34,7 +35,23 @@
                 //페이지 번호 추가
                 // customPaging: function(slider, i) {// i는 슬라이드의 인덱스입니다 (0부터 시작)
                 //     return '<span>' + (i + 1) + '</span><span>/</span><span>' + slider.slideCount + '</span>'; // 슬라이드 번호를 표시 (예: 1/5, 2/5, ...)
-                // } 
+                // }
+                responsive: [ // 반응형 웹 구현 옵션
+					{  
+						breakpoint: 960, //화면 사이즈 960px
+						settings: {
+							//위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+							slidesToShow:1
+						} 
+					},
+					{ 
+						breakpoint: 768, //화면 사이즈 768px
+						settings: {	
+							//위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+							slidesToShow:1 
+						} 
+					}
+				]
             });
             // 버튼 위치 이동
             $(".slick-prev, .slick-next").wrapAll("<div class='wbutton'></div>"); // 슬릭 앞,뒤 버튼 div.wbutton 으로 감싸기
@@ -54,8 +71,8 @@
                     $("#menu").removeClass("fixed"); // 고정해제
                     }
                 })
-            $("#top-bn").click(function(){ // 버튼을 클릭했을 때
-            $(this).slideUp(500); //슬라이드 위로 사라지기
+            $("body .notice a p:nth-child(2), body .notice a img").click(function(){ // 버튼을 클릭했을 때
+            $("#top-bn").slideUp(500); //슬라이드 위로 사라지기
                 return false;
             });
 
@@ -64,7 +81,7 @@
     <script>
         // 모달 팝업 추가
         $(function(){
-            $("modal").fadeIn();
+            $("#modal").fadeIn();
             $("#modal button").click(function(){//모달안에 버튼 클릭 시 닫히기
                 modalClose();
             });
@@ -87,10 +104,10 @@
     <!-- notice -->
     <div class="notice" id="top-bn">
         <h2 class="hide">이벤트 공지사항</h2>
-        <div class="inner">
-            <a href="">
+        <div class="wrap">
+            <a href="#">
                 <p class="h6">정육각이 처음이라면 <span>한달 동안 무료배송</span></p>
-                <p>닫기</p><img src="img/x.svg" alt="닫기">
+                <button>닫기<img src="img/x.svg" alt="닫기"></button>
             </a>
         </div>
     </div>
@@ -98,7 +115,7 @@
     <header id="header">
         <div class="innerBox" id="menu">
             <div class="wrap">
-                <nav class="flex">
+                <nav>
                     <h1><a href="#">정육각</a></h1>
                     <ul class="gnb flex">
                         <li><a class="h6" href="">쇼핑하기</a></li>
@@ -118,103 +135,141 @@
             </div>
         </div>
     </header>
-        <!-- title영역 -->
-        <div class="title">
-            <div class="wrap flex">
-                <h2 class="hide">타이틀배너</h2>
-                <p class="h6">정육각이 처음이라면?</p>
-                <p class="h1">가입 즉시 누구나<br>한달 동안<span> 무료배송!</span></p>
-                <p><a href="">가입하고 혜택받기</a></p>
-            </div>
-        </div>
-    <main id="contents">
-    <!-- main-section1 홍보 영역 -->
-    <section id="s1">
+    <!-- title영역 -->
+    <div class="title">
         <div class="wrap flex">
-            <h2 class="hide">이벤트 안내</h2>
-            <ul class="Ani">
-                <li class="Ani-1"><a class="h5" href=""><p>복날 기념 최대 1만원 할인</p><br><p>초신선 민물장어 양념구이 출시</p></a></li>
-                <li class="Ani-2"><a class="h5" href="">함께 구매하기 좋은<br>곁들임 최대 30% 할인</a></li>
-                <li class="Ani-3"><a class="h5" href="">수입과일 신제품<br>애플망고·체리·레몬·그린키위 출시</a></li>
-                <li class="Ani-4"><a class="h5" href="">갓 잡은 닭과 전복으로<br>만드는 초신선 전복삼계탕</a></li>
-                <li class="Ani-5"><a class="h5" href=""><p>정육각 친구 초대 이벤트</p>
-                    <p>친구를 초대하고 5천원 적립금 받으세요!</p></a></li>
-                <li class="Ani-6"><a class="h5" href="">초신선하게 전하는 마음<br>정육각 선물하기 오픈</a></li>
-                <li class="Ani-7"><a class="h5" href="">정육각 앱 설치 하면<br>12% 할인 쿠폰 증정!</a></li>  
-            </ul>
-            <ul class="event">
-                <li>
-                    <p class="h5">정육각 앱 설치하면<br>
-                       12% 할인 쿠폰 증정!
-                    </p>
+            <h2 class="h1">가입 즉시 누구나<br>한달 동안<span> 무료배송!</span></h2>
+            <p class="h6">정육각이 처음이라면?</p>
+            <a href="">가입하고 혜택받기</a>
+        </div>
+    </div>
+    <!-- main 영역 -->
+    <main id="contents">
+        <!-- main-section1 홍보 영역 -->
+        <section id="s1">
+            <div class="wrap flex">
+                <h2 class="hide">이벤트 안내</h2>
+                <ul class="Ani">
+                    <li class="Ani-1">
+                        <a class="h5" href="#">
+                            <h3>초신선 돼지 김치찌개,</h3>
+                            <p>삼겹살 김치찜 출시 기념 할인</p>
+                            <img src="img/s1_1.png" alt="삼겹살 김치찜">
+                        </a>
+                    </li>
+                    <li class="Ani-2">
+                        <a class="h5" href="#">
+                            <h3>원재료 본연의 맛을 살린 리얼앤리치 15% 할인</h3>
+                            <img src="img/s1_2.png" alt="함박">
+                        </a>
+                    </li>
+                    <li class="Ani-3">
+                        <a class="h5" href="#">
+                            <h3>단 2주만 만나볼 수 있는! 썸머킹 사과 절찬 판매중</h3>
+                            <img src="img/s1_3.png" alt="사과">
+                        </a>
+                    </li>
+                    <li class="Ani-4">
+                        <a class="h5" href="#">
+                            <h3>함께 구매하기 좋은 곁들임 최대 30% 할인</h3>
+                            <img src="img/s1_4.png" alt="곁들임 반찬">
+                        </a>
+                    </li>
+                    <li class="Ani-5">
+                        <a class="h5" href="#">
+                            <h3>수입과일 신제품애플망고·체리·레몬·그린키위 출시</h3>
+                            <img src="img/s1_5.png" alt="수입과일 4종">
+                        </a>
+                    </li>
+                    <li class="Ani-6">
+                        <a class="h5" href="#">
+                            <h3>정육각 친구 초대 이벤트</h3>
+                            <p>친구를 초대하고 5천원 적립금 받으세요!</p>
+                            <img src="img/s1_6.png" alt="선물하기 오픈">
+                        </a>
+                    </li>
+                    <li class="Ani-7">
+                        <a class="h5" href="#">
+                            <h3>초신선하게 전하는 마음 정육각 선물하기 오픈</h3>
+                            <img src="img/s1_7.png" alt="선물하기">
+                        </a>
+                    </li>
+                    <li class="Ani-8">
+                        <a class="h5" href="#">
+                            <h3>정육각 앱 설치 하면 12% 할인 쿠폰 증정!</h3>
+                            <img src="img/s1_8.png" alt="앱 설치 쿠폰 증정">
+                        </a>
+                    </li>
+                </ul>
+                <div class="event">
+                    <p class="h5">정육각 앱 설치하면12% 할인 쿠폰 증정!</p>
                     <p><a href="">자세히 보기</a></p>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- main-section2 상품 영역 -->
-    <section id="s2">
-        <div class="wrap grid">
-            <h2 class="h4">정육각 베스트 상품</h2>
-            <ul class="grid">
-                <li>
-                    <a href="">
-                        <img src="img/pork.png" alt="삼겹살 구이용">
-                        <h3 class="h6">초신선 돼지 삼겹살 구이용</h3>
-                        <p>기준가 21,600원</p>
-                    </a>
-                    <button>장바구니</button>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="img/chicken.png" alt="닭볶음탕">
-                        <h3 class="h6">초신선 닭볶음탕</h3>
-                        <p>기준가 7,800원</p>
-                    </a>
-                    <button><a href="">장바구니</a></button>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="img/porkcutlet.png" alt="돈까스">
-                        <h3 class="h6">초신선 등심 돈까스</h3>
-                        <p>기준가 13,500원</p>
-                    </a>
-                    <button><a href="">장바구니</a></button>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="img/egg.png" alt="유정란">
-                        <h3 class="h6">초신선 동물복지 무항생제 유정란</h3>
-                        <p>기준가 6,900원</p>
-                    </a>
-                    <button><a href="">장바구니</a></button>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="img/milk.png" alt="우유">
-                        <h3 class="h6">초신선 무항생제 우유</h3>
-                        <p>기준가 4,300원</p>
-                    </a>
-                    <button><a href="">장바구니</a></button>
-                </li>
-                <li>
-                    <a href="">
-                        <img src="img/bmix.png" alt="한우다짐육">
-                        <h3 class="h6">초신선 무항생제 이유식용 한우 우둔 다짐육</h3>
-                        <p>기준가 17,100원</p>
-                    </a>
-                    <button><a href="">장바구니</a></button>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- main-section3 배너 영역 -->
-    <section id="s3">
-        <div class="wrap">
-            <h2 class="h4">다양한 정육각 상품을 만나보세요!</h2>
-            <p><a class="f14" href="">쇼핑하러 가기</a></p>
-        </div>
-    </section>
+                </div>
+            </div>
+        </section>
+        <!-- main-section2 상품 영역 -->
+        <section id="s2">
+            <div class="wrap grid">
+                <h2 class="h4">정육각 베스트 상품</h2>
+                <ul class="grid">
+                    <li>
+                        <a href="">
+                            <img src="img/pork.png" alt="삼겹살 구이용">
+                            <h3 class="h6">초신선 돼지 삼겹살 구이용</h3>
+                            <p>기준가 21,600원</p>
+                        </a>
+                        <button>장바구니</button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/chicken.png" alt="닭볶음탕">
+                            <h3 class="h6">초신선 닭볶음탕</h3>
+                            <p>기준가 7,800원</p>
+                        </a>
+                        <button><a href="">장바구니</a></button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/porkcutlet.png" alt="돈까스">
+                            <h3 class="h6">초신선 등심 돈까스</h3>
+                            <p>기준가 13,500원</p>
+                        </a>
+                        <button><a href="">장바구니</a></button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/egg.png" alt="유정란">
+                            <h3 class="h6">초신선 동물복지 무항생제 유정란</h3>
+                            <p>기준가 6,900원</p>
+                        </a>
+                        <button><a href="">장바구니</a></button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/milk.png" alt="우유">
+                            <h3 class="h6">초신선 무항생제 우유</h3>
+                            <p>기준가 4,300원</p>
+                        </a>
+                        <button><a href="">장바구니</a></button>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/bmix.png" alt="한우다짐육">
+                            <h3 class="h6">초신선 무항생제 이유식용 한우 우둔 다짐육</h3>
+                            <p>기준가 17,100원</p>
+                        </a>
+                        <button><a href="">장바구니</a></button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- main-section3 배너 영역 -->
+        <section id="s3">
+            <div class="wrap">
+                <h2 class="h4">다양한 정육각 상품을 만나보세요!</h2>
+                <p><a class="f14" href="">쇼핑하러 가기</a></p>
+            </div>
+        </section>
     </main>
     <footer id="footer">
         <div class="wrap">
