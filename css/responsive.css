@@ -1,0 +1,371 @@
+/* 테블릿 가로, 테블릿 세로 (해상도 1024px ~)*/ 
+@media screen and (max-width:1024px) {
+  body .notice a p{
+  margin-left: 0;
+  }
+  body .notice a p{
+  justify-content: center;
+  column-gap: 0;
+  }
+/*  헤더 영역 --------------------------------------------------------------------------------------------  */
+  #header div.wrap nav{
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  }
+  #header div.wrap nav ul.gnb{
+  width: 100%;
+  }
+  #header div.wrap nav ul.gnb li:nth-child(4)::after{
+  right: 0px;
+  top: -10px;
+  }
+  #header div.wrap nav ul.enb{
+  padding: 0 5px;
+  grid-column: 3;
+  justify-self: right;
+  }
+  #header div.wrap nav ul.enb li{
+  padding: 0 5px;
+  grid-column: 3;
+  justify-self: right;
+  }
+  #header div.wrap nav ul.enb li:nth-child(2)::after{
+  display: none;
+  }
+  #header div.wrap nav ul.enb li a{
+  padding: 0 5px;
+  font-size: 13px;
+  }
+  #header div.wrap nav ul.enb li:nth-child(5) a,
+  #header div.wrap nav ul.enb li:nth-child(6) a{
+  width: 30px;
+  height: 30px;
+  }
+/*  main section 1 영역 --------------------------------------------------------------------------------------------  */  
+  main#contents section#s1 div.wrap ul.Ani{  
+  padding: 0 20px;
+  }
+  main#contents section#s1 div.wrap ul.Ani li a,
+  main#contents section#s1 div.wrap ul.Ani li.Ani-4 a{
+  font-size: 20px;
+  }
+  main#contents section#s1 div.wrap ul.Ani li{
+  }
+  main#contents section#s1 div.wrap div.event p{
+  font-size: 20px;
+  }
+  main#contents section#s1 div.wrap div.event p a{
+  font-size: 16px;
+  }
+/*  main section 2 영역 --------------------------------------------------------------------------------------------  */
+  section#s2 div.wrap{
+  padding: 0 20px;
+  }
+  section#s2 div.wrap ul{
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+  section#s2 div.wrap ul li{
+  height: 350px;
+  line-height: 1.1;
+  width: 100%;
+  }
+  section#s2 div.wrap ul li a img{
+  width: 300px;
+  height: 270px;
+  }
+  section#s2 div.wrap ul li a h3{
+  font-size: 15px;
+  }
+  section#s2 div.wrap ul li button{
+  right: 10%;
+  width: 55px;
+  height: 55px;
+  bottom: 25%;
+  }
+/*  main section .3 영역 --------------------------------------------------------------------------------------------  */
+  section#s3 div h2{ 
+  font-size: 28px;
+  }
+/*  footer 영역 --------------------------------------------------------------------------------------------  */
+  footer > div.wrap{
+  padding: 0 20px;
+  }
+} 
+  
+/*---------------------------------------- 모바일 (해상도 768px)-----------------------------------------------------------------------*/ 
+@media screen and (max-width:768px) {
+  #header div.wrap nav h1 a{
+  width: 80px;
+  }
+  body .notice a p:nth-child(2){ 
+  transform: translateX(80px);
+  }
+  body .notice a img{
+  transform: translateX(80px);
+  }
+  #header div.wrap nav ul.gnb li a{
+  padding: 0 10px;
+  }
+  #header div.wrap nav ul.gnb li:nth-child(4)::before{
+  height: 15px;
+  top: 2px;
+  }
+  #header div.wrap nav ul.gnb li:nth-child(4)::after{
+  padding: 0;
+  width: 13px;
+  height: 13px;
+  top: -5px;
+  }
+  #header div.wrap nav ul.enb{
+  font-size: 11px;
+  padding: 0;
+  }
+  #header div.wrap nav ul.enb li a{
+  font-size: 11px;
+  padding: 0;
+  }
+  #header div.wrap nav ul.enb li:nth-child(2)::after{
+  transform: translate(5px, 3px);
+  }
+  #header div.wrap nav ul.enb li:nth-child(5) a{ 
+  width: 30px;
+  height: 30px;
+  }
+  #header div.wrap nav ul.enb li:nth-child(6) a{
+  width: 30px;
+  height: 30px;
+  }
+  div.title{  
+  background-position: 45% 50%;
+  }
+/*  main 영역 -----------------------------------------------------------------------------------------------------------------------------  */
+  main#contents section#s1 div.wrap ul.Ani{
+  padding: 0;
+  }
+  main#contents section#s1 div.wrap ul li p{
+  font-size: 16px;
+  font-weight: bold;
+  }
+  main#contents section#s1 div.wrap ul.Ani li a{
+  font-size: 18px;
+  }
+  main#contents section#s1 div.wrap ul.Ani li.Ani-5 a h3{
+  word-break: break-word;
+  }
+  main#contents section#s1 div.wrap div.event p a{
+  font-size: 14px;
+  }
+  main#contents section#s1 div.wrap ul.Ani li a img{
+  width: 100px;
+  }
+  main#contents section#s1 div.wrap div.event::after{
+  width: 150px;
+  height: 150px;
+  margin-left: 10px;
+  }
+  section#s2 div.wrap ul{  
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  }
+  section#s2 div.wrap ul li{
+  height: 260px;
+  margin-bottom: 30px;
+  }
+  section#s2 div.wrap ul li a{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1.4;
+  justify-content: center;
+  }
+  section#s2 div.wrap ul li a img{
+  font-size: 14px;
+  width: 300px;
+  height: 230px;
+  padding: 20px 35px;
+  display: block;
+  }
+  section#s2 div.wrap > ul > li > a > h3{
+  font-size: 18px;
+  margin-top: 10px;
+  width: 80%;
+  text-align: left;
+  }
+  section#s2 div.wrap ul li a p{
+  font-size: 15px;
+  width: 80%;
+  text-align: left;
+  }
+  section#s2 div.wrap ul li button{
+  bottom: 15%;
+  }
+  section#s3 div h2{
+  font-size: 22px;
+  }
+}
+
+/*---------------------------------------- 모바일 (해상도 480px)-----------------------------------------------------------------------*/ 
+@media screen and (max-width:480px){
+  #modal .m-popup{
+  width: 300px;
+  height: 400px;
+  }
+  #modal .m-popup img{
+  width: 264px;
+  height: 200px;
+  }
+  #modal .m-popup button:last-child{
+  transform: translate(95px, 70px);
+  }
+  body .notice a p{
+  font-weight: bold;
+  }
+  body .notice a p:first-child::before{
+  transform: translateX(-10px);
+  }
+  body .notice a span{
+  display: none;
+  }
+  body .notice a p:first-child::after{
+  width: 70px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(10px, 10px);
+  margin-left: 0;
+  }
+  body .notice a button{
+  padding-right: 10px;
+  }
+  body .notice a button img{
+  transform: translateX(0px);
+  }
+  #header div.wrap nav{
+  padding: 0 10px;
+  }
+  #header div.wrap nav ul.gnb li:not(:first-child){
+  display: none;
+  }
+  #header div.wrap nav ul.enb{
+  padding-right: 10px;
+  }
+  #header div.wrap nav ul.enb li:nth-child(n+1):nth-child(-n+2),
+  #header div.wrap nav ul.enb li:nth-child(4){
+  display: none;
+  }
+  #header div.wrap nav ul.enb li:nth-child(n+5):nth-child(-n+6) a{
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  }
+  div.title > div.wrap h2{
+  font-size: 32px;
+  }
+  div.title > div.wrap a{
+  width: 150px;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+  }
+/*  main 영역 -----------------------------------------------------------------------------------------------------------------------------  */
+  main#contents section#s1 div.wrap{
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  }
+  main#contents section#s1 div.wrap ul.Ani{
+  width: 100%;
+  }
+  main#contents section#s1 div.wrap ul.Ani li a img{
+  width: 150px;
+  }
+  main#contents section#s1 div.wrap div.event{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  }
+  main#contents section#s1 div.wrap div.event::before{
+  display: none;
+  }
+  main#contents section#s1 div.wrap div.event::after{
+  justify-self: right;
+  margin-right: 30px;
+  }
+  section#s2 div.wrap ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  }
+  section#s2 div.wrap ul li{
+  height: auto;
+  margin-bottom: 0;
+  }
+  section#s2 div.wrap ul li button{
+  bottom: 20%;
+  right: 5%;
+  }
+  section#s2 div.wrap ul li:nth-child(3) button, section#s2 div.wrap ul li:nth-child(6) button{
+  right: 5%;
+  }
+  section#s2 div.wrap ul li:nth-child(n+4):nth-child(-n+6){
+  display: none;
+  }
+  section#s2 div.wrap ul li a img{
+  font-size: 12px;
+  width: 270px;
+  height: 250px;
+  }
+  section#s2 div.wrap > ul > li > a > h3{
+  width: 60%;
+  }
+  section#s2 div.wrap ul li a p{
+  width: 60%;
+  }
+  section#s3 div{
+  padding-left: 20px;
+  background-size: 130% 55%;
+  }
+  section#s3 div h2{ 
+  font-size: 20px;
+  }
+/*  foote 영역 -----------------------------------------------------------------------------------------------------------------------------  */
+  footer#footer{
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  height: auto;
+  }
+  footer > div.wrap{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  }
+  footer div.wrap ul.info{
+  margin-bottom: 20px;
+  }
+  footer div.address{
+  order: 3;
+  margin-bottom: 15px;
+  }
+  footer div.address > p{
+  margin-top: 5px;
+  }
+  footer div.tel{
+  line-height: 1.3;
+  margin: 0px;
+  }
+  footer div.tel p:last-of-type{
+  margin-bottom: 3px;
+  }
+  footer#footer .sns,
+  footer div.address address{
+  display: none;
+  }
+  footer#footer::after{
+  display: none;
+  }
+  
+}
