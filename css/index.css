@@ -529,8 +529,8 @@ section#s2 div.wrap ul li a button{
   width: 68px;
   height: 68px;
   position: absolute;
-  right: 5%;
-  bottom: 20%;
+  right: 3%;
+  bottom: 18%;
   z-index: 1;
   border: 1px solid #fff;
   border-radius: 50%;
@@ -606,7 +606,6 @@ footer#footer::after{
   border: 1px solid #eeeeee;
   position: absolute;
   top: 60px;
-  
 }
 footer>div.wrap{
   display: grid;
